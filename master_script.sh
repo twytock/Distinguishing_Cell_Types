@@ -1,3 +1,14 @@
+mkdir -p GeneExp/Data/
+mkdir -p GeneExp/Analysis/
+mkdir -p GeneExp/Normalization/
+mkdir -p GeneExp/Figures/
+mkdir -p GeneExp/Feature_Selection
+
+mkdir -p HiC/Data/
+mkdir -p HiC/Analysis/
+mkdir -p HiC/Normalization/
+mkdir -p HiC/Figures/
+mkdir -p HiC/Feature_Selection
 ## reconstitute data
 python split_and_reconstitute_large_files.py
 
