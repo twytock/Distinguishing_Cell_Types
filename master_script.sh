@@ -10,7 +10,7 @@ mkdir -p HiC/Normalization/
 mkdir -p HiC/Figures/
 mkdir -p HiC/Feature_Selection
 ## reconstitute data
-python split_and_reconstitute_large_files.py
+python split_and_reconstitute_large_files.py R
 
 ## calculate correlations
 python calculate_correlations.py;
