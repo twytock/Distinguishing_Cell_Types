@@ -377,6 +377,7 @@ def alternate_feature_selection(ptile_tup=([.6],'60%')):
     return ct_ordinds_d
 
 def select_features_uncorr(**kwargs):
+    ext = 'None' if not 'ext' in kwargs.keys() else kwargs['ext']    
     p = 0.5 if not 'p' in kwargs.keys() else kwargs['p']
     SEARCH = 5000 if not 'SEARCH' in kwargs.keys() else kwargs['SEARCH']
     N_MAX_FEAT = 50 if not 'N_MAX_FEAT' in kwargs.keys() else kwargs['N_MAX_FEAT']
