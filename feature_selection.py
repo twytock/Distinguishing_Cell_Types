@@ -160,7 +160,7 @@ def all_overlap_dist(ctf,feats,NREP=25):
     tot = CAT.value_counts().loc[ctf]
     selcol = CAT.categories.get_indexer([ctf])[0]
     nf = min(min_num,2)
-    ddf = proj_data.loc[:,feats]
+    ddf = proj_data.loc[:,feats].fillna(0)
     ## for stability, need to repeat this several times.
     REP_D = {}
     for _nrep in range(NREP):
@@ -197,7 +197,7 @@ def samp_pairwise_dist(ctf_cti,feats,rem_feats,MAX_PAIRS=1000,NREP=5):
     ## requirement: take in ctf,cti as a pair
     func_l = [np.amin,np.median,np.amax]
     func_lbl_l = ['min','median','max']
-    sel_data_df = proj_data.loc[:,feats+rem_feats]
+    sel_data_df = proj_data.loc[:,feats+rem_feats].fillna(0)
     (ctf,dff),(cti,dfi) = [(ct,sel_data_df.xs(ct,level='CellType').T) for ct in ctf_cti]
     #TF_SEL = proj_data.columns.isin(feats)
     #rem_feats = proj_data.T[~TF_SEL].index.tolist()
